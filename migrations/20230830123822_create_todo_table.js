@@ -6,7 +6,7 @@ exports.up = function(knex) {
   return knex.schema.createTable('todos', table => {
     table.uuid('id').primary().defaultTo(knex.raw('uuid_generate_v4()'))
     table.string('title').notNullable();
-    table.string('description').notNullable();
+    table.string('description');
     table.boolean('status').defaultTo(0);
     table.timestamp('due_date');
     table.string('repeat');
