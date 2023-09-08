@@ -191,8 +191,29 @@ body{
     cursor: pointer;
 }
 
+.bi-check2{
+    color: transparent;
+}
+
 .bi-check2.complete{
-    display: none;
+    color:#352F44;
+}
+
+.todo-details{
+    background: #352F44;
+    max-width: 250px;
+    height: 100%;
+    box-shadow: 1px 0px 1px #221e2b;
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-details .active{
+    margin-right: 0;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 
 /* @media(max-width: 767px){

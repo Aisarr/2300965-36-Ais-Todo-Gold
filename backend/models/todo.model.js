@@ -47,7 +47,7 @@ class TodoModel {
         const getTodo = await knex('todos')
         .select('*')
         .where('id', id)
-        return getTodo
+        return getTodo[0]
     }
 }
 
