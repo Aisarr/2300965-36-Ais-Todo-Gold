@@ -1,8 +1,10 @@
 import {
     dateFormat,
-    appendNewTodoElement
+    appendNewTodoElement,
 } from './utils.js'
-
+import {
+    openTodoDetails
+} from './userInterface.js'
 const baseUrl = 'http://localhost:5000/todos'
 
 export const handleAddTodo = async () => {
@@ -33,6 +35,7 @@ export const handleAddTodo = async () => {
     }
 };
 
+
 export const handleGetTodoById = async (id) => {
     try {
         var requestOptions = {
@@ -44,6 +47,7 @@ export const handleGetTodoById = async (id) => {
           const response = await fetch(baseUrl+'/'+todoId, requestOptions)
           const result = await response.json()
           console.log(result) 
+          openTodoDetails(result.data)
         } catch (error) {
             console.error('Error:', error)
         }

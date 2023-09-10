@@ -1,15 +1,15 @@
 body{
     margin: 0px;
     padding: 0px;
-    background:#eeeded;
+    background:#dbdbdb;
     height: 100vh;
 }
 
 .sidebar{
-    background: #352F44;
+    background: #eeeded;
     max-width: 250px;
     height: 100%;
-    box-shadow: 1px 0px 1px #221e2b;
+    box-shadow: 0px 8px 5px #acacac;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -33,13 +33,6 @@ body{
     color: #B9B4C7;
 }
 
-.close-button{
-    background: transparent;
-    border: none;
-    color: #B9B4C7;
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
 
 #side_nav{
     margin-left: -251px;
@@ -91,16 +84,19 @@ body{
     margin-bottom: 0 !important;
 }
 
-.input-group input{
-    background:#B9B4C7;
+.input-group input.input-todo{
+    background:#eeeded;
     border: none;
+    box-shadow: 0px 2px 5px #acacac;
     color: #221e2b !important;
     padding: 15px;
 }
 
 .input-group input:focus{
-    background:#B9B4C7;
+    background:#eeeded;
     border: none;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .input-group input::placeholder{
@@ -116,9 +112,20 @@ body{
     width:calc(100% - 250px)
 }
 
+.main-container.active-right{
+    margin-right: 250px;
+    width:calc(100% - 250px)
+}
+
+.main-container.active.active-right{
+    margin-left: 250px;
+    margin-right: 250px;
+    width: calc(100% - 500px)
+}
+
 #popupMenu {
     display: none;
-    background:#9f9aac;
+    background:#e4e4e4;
     margin-top: 0px;
     margin-left: 20px;
     margin-right: 20px;
@@ -127,7 +134,7 @@ body{
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 3;
-    border-top: solid 0.5px #eeeded; 
+    /* border-top: solid 0.5px #eeeded;  */
 }
 
 
@@ -165,8 +172,9 @@ body{
     margin: 20px 20px;
     padding: 10px;
     display: block;
-    background: #B9B4C7;
+    background: #eeeded;
     border-radius: 4px;
+    box-shadow: 0px 2px 5px #acacac;
 }
 
 .display-todo .check-box i {
@@ -174,7 +182,7 @@ body{
     top: 10px;
     left: 10px;
 }
-.check-box {
+.display-todo .check-box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,22 +208,85 @@ body{
 }
 
 .todo-details{
-    background: #352F44;
+    background: #eeeded;
     max-width: 250px;
     height: 100%;
-    box-shadow: 1px 0px 1px #221e2b;
-    display: flex;
+    box-shadow: 0px 8px 5px #acacac;
+    display: none;
     flex-direction: column;
 }
 
-.todo-details .active{
+.todo-details.active{
     margin-right: 0;
     z-index: 2;
     position: fixed;
     top: 0;
     right: 0;
+    display: flex;
 }
 
+.todo-details .check-box{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+.todo-details .check-box i{
+    position: absolute;
+    margin-top: 10px;
+}
+.todo-details .title, .todo-due, .todo-repeat{
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    background: #f7f7f7;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.todo-details .title .input-group{
+    margin-left: 30px;
+    padding: 0px;
+
+}
+.todo-details div, .todo-details input{
+    background: #f7f7f7;
+    border: none;
+}
+
+.button-wrapper .text{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    color: #5C5470;
+    font-weight: 400;
+    margin-top: 7px;
+}
+.button-wrapper .bi{
+    margin-top: 7px;
+    color:#5C5470 ;
+}
+
+.del-group{
+    padding: 5px;
+    justify-content: space-between;
+    background: transparent !important;
+    margin-top: 450px;
+}
+.del-group div{
+    background: transparent;
+}
+.del-group i{
+    font-size: larger;
+    color: #352F44;
+}
+.created-at{
+    padding-top: 6px;
+    font-size: smaller;
+}
+.due-value{
+    font-size: 10px;
+    
+}
 /* @media(max-width: 767px){
     #side_nav{
         margin-left: -250px;

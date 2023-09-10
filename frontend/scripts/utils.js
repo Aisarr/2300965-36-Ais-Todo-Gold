@@ -1,3 +1,5 @@
+import { handleGetTodoById } from "./api.js"
+
 export const dateFormat = (inputDate) => {
     const date = new Date(inputDate)
     const year = date.getFullYear()
@@ -9,7 +11,7 @@ export const dateFormat = (inputDate) => {
  const generateTodoHTML = (data)=> {
     const todoDiv = document.createElement('div')
     todoDiv.classList.add('display-todo', 'd-flex')
-    
+    todoDiv.setAttribute('id', data.id)
     const checkBoxDiv = document.createElement('div')
     checkBoxDiv.classList.add('check-box', 'd-flex')
     
@@ -52,10 +54,39 @@ export const appendNewTodoElement = (data) => {
     const todoList = document.getElementById('todoList')
     const todoDiv = generateTodoHTML(data)
     todoList.appendChild(todoDiv)
-
-    const todoTitleSpan = todoDiv.querySelector('.todo-title');
-    todoTitleSpan.addEventListener('click', function () {
-        const id = this.getAttribute('id');
-        handleGetTodoById(id)
-    });
 }
+
+export const getTodoId = (event) => {
+    const target = event.target;
+    if (target.classList.contains('display-todo') || target.classList.contains('todo-title')){
+        const id = target.id
+        handleGetTodoById(id)
+    }}
+
+// export const openTodoDetails = (data) => {
+//     const title = data.title
+//     const due = data.due_date
+//     const repeat = data.repeat
+//     const createdAt = data.created_at
+//     const updatedAt = data.updated_at
+//     const id = data.id
+
+//     const todoTitleInput = document.querySelector('.todo-title-input')
+//     todoTitleInput.setAttribute('value', title)
+
+//     const dueValue = document.querySelector('.due-value')
+//     dueValue.textContent = dateFormat(due)
+
+//     const repeatValue = document.querySelector('.repeat-value')
+//     repeatValue.textContent = repeat
+
+//     const createdAtValue = document.querySelector('.created-at')
+//     createdAtValue.textContent = createdAt
+
+//     const updatedAtValue = document.querySelector('.updated-at')
+//     updatedAtValue.textContent = updatedAt
+
+//     const todoDetails = document.querySelector('.todo-details')
+//     todoDetails.setAttribute('id', id)
+//     todoDetails.classList.add('active')
+// }
