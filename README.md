@@ -21,3 +21,13 @@ To install this project, follow these steps:
 
 copy the `.env.example` file and use it as a template to create your own `.env`  file
 
+##Usage
+
+1. **Create a Todo**
+   -input todo and due date
+   -click add button to submit
+2. **Edit a Todo**
+   -click at the todo to get todo details
+   -after edit, click enter
+3. **Delete a Todo**
+   -click delete button at the todo details
