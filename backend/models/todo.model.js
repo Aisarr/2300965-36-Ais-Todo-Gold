@@ -20,7 +20,8 @@ class TodoModel {
             description: body.description,
             due_date: body.due_date,
             repeat: body.repeat,
-            status: body.status
+            status: body.status,
+            updated_at: new Date()
         }
         const updatedTodo = await knex('todos')
         .where('id', id)

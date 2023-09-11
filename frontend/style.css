@@ -207,6 +207,14 @@ body{
     color:#352F44;
 }
 
+.todo-title.complete{
+    text-decoration: line-through;
+}
+
+.todo-title-input.complete{
+    text-decoration: line-through;
+}
+
 .todo-details{
     background: #eeeded;
     max-width: 250px;
@@ -280,12 +288,19 @@ body{
     color: #352F44;
 }
 .created-at{
-    padding-top: 6px;
+    padding-left: 30px;
     font-size: smaller;
+}
+.updated-at{
+    font-size: 10px;
 }
 .due-value{
     font-size: 10px;
     
+}
+.navbar-brand a{
+    color: #f7f7f7;
+    text-decoration: none;
 }
 /* @media(max-width: 767px){
     #side_nav{

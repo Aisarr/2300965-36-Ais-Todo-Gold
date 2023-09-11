@@ -3,7 +3,8 @@ import {
     appendNewTodoElement,
 } from './utils.js'
 import {
-    openTodoDetails
+    openTodoDetails,
+    removeDisplayedTodo
 } from './userInterface.js'
 const baseUrl = 'http://localhost:5000/todos'
 
@@ -73,4 +74,43 @@ export const handleGetTodos = async() => {
         } catch (error) {
             console.error('Error:', error)
         }
+}
+
+export const handleUpdateTodo = async(data) => {
+    try {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        
+        var raw = JSON.stringify(data);
+        
+        var requestOptions = {
+          method: 'PUT',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        const todoId = data.id
+        const response = await fetch(baseUrl+'/'+todoId, requestOptions)
+        const result = await response.json()
+        console.log(result)
+        openTodoDetails(result.data)
+    } catch (error) {
+        console.error('Error:', error)
+    }
+}
+
+export const handleDeleteTodo = async(id) => {
+    try {
+        var requestOptions = {
+            method: 'DELETE',
+            redirect: 'follow'
+          };
+        const todoId = id
+        const response = await fetch(baseUrl+'/'+todoId, requestOptions)
+        const result = await response.json()
+        console.log(result)
+        removeDisplayedTodo(todoId)
+    } catch (error) {
+        console.error('Error:', error)
+    }
 }

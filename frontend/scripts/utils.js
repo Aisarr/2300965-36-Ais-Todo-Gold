@@ -2,10 +2,10 @@ import { handleGetTodoById } from "./api.js"
 
 export const dateFormat = (inputDate) => {
     const date = new Date(inputDate)
-    const year = date.getFullYear()
-    const month = date.getMonth() + 1
-    const day = date.getDate()
-    return `${year}-${month}-${day}`
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
 }
 
  const generateTodoHTML = (data)=> {
@@ -20,9 +20,11 @@ export const dateFormat = (inputDate) => {
     
     const squareIcon = document.createElement('i')
     squareIcon.classList.add('bi', 'bi-square')
-  
+    
     const checkIcon = document.createElement('i')
     checkIcon.classList.add('bi', 'bi-check2')
+    checkIcon.classList.add(`id${data.id}`)
+    checkIcon.setAttribute('id', data.id)
     
     checkBoxIcons.appendChild(squareIcon)
     checkBoxIcons.appendChild(checkIcon)
@@ -36,10 +38,15 @@ export const dateFormat = (inputDate) => {
     
     const todoTitleSpan = document.createElement('span')
     todoTitleSpan.classList.add('todo-title')
+    todoTitleSpan.classList.add(`id${data.id}`)
     todoTitleSpan.setAttribute('id', data.id)
-    
-    
     todoTitleSpan.textContent = data.title
+    
+    if(data.status === true){
+        checkIcon.classList.add('complete')
+        todoTitleSpan.classList.add('complete')
+    }
+    
     
     viewButton.appendChild(todoTitleSpan)
     todoDataDiv.appendChild(viewButton)
@@ -58,7 +65,7 @@ export const appendNewTodoElement = (data) => {
 
 export const getTodoId = (event) => {
     const target = event.target;
-    if (target.classList.contains('display-todo') || target.classList.contains('todo-title')){
+    if ( target.classList.contains('display-todo') || target.classList.contains('todo-title')){
         const id = target.id
         handleGetTodoById(id)
     }}

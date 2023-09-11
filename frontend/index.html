@@ -15,10 +15,10 @@
                 <button class="open-button px-3 py-2" type="button" aria-label="Open"><i class="bi bi-list"></i></button>
             </div>
             <div class="middle-region">
-                <div class="input-group flex-nowrap pt-0" id="searchbar-nav">
+                <!-- <div class="input-group flex-nowrap pt-0" id="searchbar-nav">
                     <span class="input-group-text" id="addon-wrapping"><i class="bi bi-search"></i></span>
                     <input type="text" class="form-control searchbar d-none d-sm-flex" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
-                </div>
+                </div> -->
             </div>
             <div class="right-region">
                 <div class="navbar-brand">
@@ -64,10 +64,10 @@
                                         <div class="dropdown-menu due-date-dropdown">
                                             <div class="dropdown-title">Due</div>
                                             <hr class="h-color mx-2">
-                                            <li><a class="dropdown-item" href="#">Today</a></li>
-                                            <li><a class="dropdown-item" href="#">Tommorow</a></li>
-                                            <li><a class="dropdown-item" href="#">Next week</a></li>
-                                            <hr class="h-color mx-2">
+                                            <!-- <li><a class="dropdown-item due-date-value" href="#">Today</a></li>
+                                            <li><a class="dropdown-item due-date-value" href="#">Tommorow</a></li>
+                                            <li><a class="dropdown-item due-date-value" href="#">Next week</a></li> -->
+                                            <!-- <hr class="h-color mx-2"> -->
                                             <input class="date-input" type="date">
                                         </div>
                                     </div>
@@ -118,11 +118,11 @@
                         <div class="check-box d-flex">
                             <span class="check-box-icons">
                                 <i class="bi bi-square"></i>
-                                <i class="bi bi-check2"></i>
+                                <i class="bi bi-check2 inner-check-box"></i>
                             </span>
                         </div>
                         <div class="input-group input-group-lg">
-                            <input type="text" class="form-control todo-title-input" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                            <input type="text" class="form-control todo-title-input" value="#" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                           </div>
                         
                     </div>
@@ -134,9 +134,9 @@
                         <div class="dropdown-menu due-date-dropdown">
                             <div class="dropdown-title">Due</div>
                             <hr class="h-color mx-2">
-                            <li><a class="dropdown-item" href="#">Today</a></li>
-                            <li><a class="dropdown-item" href="#">Tommorow</a></li>
-                            <li><a class="dropdown-item" href="#">Next week</a></li>
+                            <li><a class="dropdown-item due-date-value" href="#">Today</a></li>
+                            <li><a class="dropdown-item due-date-value" href="#">Tommorow</a></li>
+                            <li><a class="dropdown-item due-date-value" href="#">Next week</a></li>
                             <hr class="h-color mx-2">
                             <input class="date-input" type="date">
                         </div>
@@ -161,7 +161,7 @@
                     <div class="todo-description mt-3">
                         <div class="description-group">
                             <div class="input-group input-description input-group-sm p-0">
-                                <input type="text" class="form-control" placeholder="add notes" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                                <input type="text" class="form-control input-description-value" value="#" placeholder="add notes" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                             </div>
                             <div class="updated-at p-2 mt-5">
                                 
@@ -185,7 +185,7 @@
     </div>
     
     
-    <script type="module" src="../scripts/main.js"></script>
+    <script type="module" src="scripts/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>

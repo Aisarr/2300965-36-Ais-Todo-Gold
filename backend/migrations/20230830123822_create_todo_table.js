@@ -8,7 +8,7 @@ exports.up = function(knex) {
     table.string('title').notNullable();
     table.string('description');
     table.boolean('status').defaultTo(0);
-    table.timestamp('due_date');
+    table.string('due_date')
     table.string('repeat');
     table.timestamps(true, true);
 

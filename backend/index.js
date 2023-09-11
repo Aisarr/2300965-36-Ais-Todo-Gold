@@ -3,10 +3,10 @@ const cors = require('cors')
 const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-const router = require('./backend/routes/todo.routes');
+const router = require('./routes/todo.routes');
 
 const corsOptions = {
-    origin: 'http://127.0.0.1:5500',
+    origin: 'http://localhost:3000',
   };
 
 app.use(cors(corsOptions));
