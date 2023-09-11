@@ -31,3 +31,5 @@ copy the `.env.example` file and use it as a template to create your own `.env` 
    -after edit, click enter
 3. **Delete a Todo**
    -click delete button at the todo details
+
+https://github.com/Aisarr/2300965-36-Ais-Todo-Gold/blob/main/Screenshot%202023-09-11%20182752.png?raw=true
